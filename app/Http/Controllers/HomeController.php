@@ -6,15 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 
-class HomeController extends Controller
-{
+class HomeController extends Controller {
     public function index()
     {
         return view('home');
     }
 
-    public function AddProduct(Request $request)
-    {
+    public function AddProduct(Request $request) {
         $data = new Product;
         $data->title = $request->productTitle;
         $data->description = $request->productDesc;
@@ -27,5 +25,9 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->back();
+    }
+
+    public function ShowProduct() {
+        return view('product');
     }
 }
