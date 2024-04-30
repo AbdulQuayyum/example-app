@@ -31,4 +31,11 @@ class HomeController extends Controller {
         $data = Product::all();
         return view('product', compact(('data')));
     }
+
+    public function DeleteProduct($id) {
+        $data = Product::find($id);
+        $data->delete();
+
+        return redirect()->back();
+    }
 }

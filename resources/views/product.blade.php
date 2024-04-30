@@ -22,7 +22,7 @@
             <a class="" href="/">Example App</a>
             <div class="btns-container">
                 <a class="custom-btn-02" href="{{ url('AddProduct') }}">Add Product</a>
-                <a class="custom-btn-02" href="{{ url('ShowProduct') }}">Show Product</a>
+                <a class="custom-btn-02" href="{{ url('ShowProduct') }}">All Product</a>
             </div>
         </nav>
         <main class="main-container">
@@ -37,6 +37,11 @@
                             <div class="product-container-text">
                                 <h4 class="custom-label">{{ $data->title }}</h4>
                                 <span class="">{{ $data->description }}</span>
+                                <div class="btn-container">
+                                    <a onclick="return confirm('Are you sure you want to delete this?');"
+                                        href="{{ url('DeleteProduct', $data->id) }}" class="custom-btn-02">Delete
+                                        Product</a>
+                                </div>
                             </div>
                         </div>
                     @endforeach

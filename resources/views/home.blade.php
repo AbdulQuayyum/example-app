@@ -22,7 +22,7 @@
             <a class="" href="/">Example App</a>
             <div class="btns-container">
                 <a class="custom-btn-02" href="{{ url('AddProduct') }}">Add Product</a>
-                <a class="custom-btn-02" href="{{ url('ShowProduct') }}">Show Product</a>
+                <a class="custom-btn-02" href="{{ url('ShowProduct') }}">All Product</a>
             </div>
         </nav>
         <main class="main-container">
