@@ -10,7 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/App.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/Styles.css') }}">
@@ -27,6 +27,20 @@
         </nav>
         <main class="main-container">
             <div class="flex flex-col justify-center items-center w-full">
+                <div class="product-header-div">
+                    <span class="custom-header">All Products</span>
+                </div>
+                <div class="product-parent">
+                    @foreach ($data as $data)
+                        <div class="product-container">
+                            <img src="product/{{ $data->image }}" alt={{ $data->title }}>
+                            <div class="product-container-text">
+                                <h4 class="custom-label">{{ $data->title }}</h4>
+                                <span class="">{{ $data->description }}</span>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </main>
         <footer class="footer-container">

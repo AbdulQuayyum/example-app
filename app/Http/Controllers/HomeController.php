@@ -28,6 +28,7 @@ class HomeController extends Controller {
     }
 
     public function ShowProduct() {
-        return view('product');
+        $data = Product::all();
+        return view('product', compact(('data')));
     }
 }
