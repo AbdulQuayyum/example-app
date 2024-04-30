@@ -131,6 +131,7 @@ body {
     width: 100%;
     justify-content: end;
     margin-top: 16px;
+    gap: 16px;
 }
 
 .custom-btn {

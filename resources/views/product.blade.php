@@ -21,8 +21,8 @@
         <nav class="nav-container">
             <a class="" href="/">Example App</a>
             <div class="btns-container">
-                <a class="custom-btn-02" href="{{ url('AddProduct') }}">Add Product</a>
-                <a class="custom-btn-02" href="{{ url('ShowProduct') }}">All Product</a>
+                <a class="custom-btn-02" href="{{ url('AddProduct') }}">Add</a>
+                <a class="custom-btn-02" href="{{ url('ShowProduct') }}">View All</a>
             </div>
         </nav>
         <main class="main-container">
@@ -38,9 +38,8 @@
                                 <h4 class="custom-label">{{ $data->title }}</h4>
                                 <span class="">{{ $data->description }}</span>
                                 <div class="btn-container">
-                                    <a onclick="return confirm('Are you sure you want to delete this?');"
-                                        href="{{ url('DeleteProduct', $data->id) }}" class="custom-btn-02">Delete
-                                        Product</a>
+                                    <a href="{{ url('EditProduct', $data->id) }}" class="custom-btn-02">Edit</a>
+                                    <a onclick="return confirm('Are you sure you want to delete this?');" href="{{ url('DeleteProduct', $data->id) }}" class="custom-btn-02">Delete</a>
                                 </div>
                             </div>
                         </div>
