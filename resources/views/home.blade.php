@@ -10,8 +10,77 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('assets/css/Styles.css')}}">
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: "Nunito", sans-serif;
+        }
+
+        body {
+            height: 100%;
+            width: "100%";
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(216, 216, 216);
+            border-radius: 40px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .layout {
+            height: 100%;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEUAAAD8/vz08vT09vT8+vzs7uxH16TeAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAuFJREFUOI0Vk+3NLiEIRG1B8ClAYAsQ2AIEt4D9ePtv5Xp/mZgYJ2fOFJKEfInkVWY2aglmQFkimRTV7MblYyVqD7HXyhKsSuPX12MeDhRHLtGvRG+P+B/S0Vu4OswR9tmvwNPyhdCDbVayJGads/WiUWcjCvCnruTBNHS9gmX2VzVbk7ZvB1gb1hkWFGl+A/n+/FowcO34U/XvKqZ/fHY+6vgRfU92XrOBUbGeeDfQmjWjdrK+frc6FdGReQhfSF5JvR29O2QrfNw1huTwlgsyXLo0u+5So82sgv7tsFZR2nxB6lXiquHrfD8nfYZ9SeT0LiuvSoVrxGY16pCNRZKqvwWsn5OHypPBELzohMCaRaa0ceTHYqe7X/gfJEEtKFbJpWoNqO+aS1cuTykGPpK5Ga48m6L3NefTr013KqYBQu929iP1oQ/7UwSR+i3zqruUmT84qmhzLpxyj7pr9kg7LKvqaXxZmdpn+6o8sHqSqojy02gU3U8q9PnpidiaLks0mbMYz+q2uVXsoBQ8bfURULYxRgZVYCHMv9F4OA7qxT2NPPpvGQ/sTDH2yznKh7E2AcErfcNsaIoN1izzbJiaY63x4QjUFdBSvDCvugPpu5xDny0jzEeuUQbcP1aGT9V90uixngTRLYNEIIZ6yOF1H8tm7rj2JxiefsVy53zGVy3ag5uuPsdufYOzYxLRxngKe7nhx3VAq54pmz/DK9/Q3aDam2Yt3hNXB4HuU87jKNd/CKZn77Qdn5QkXPfqSkhk7hGOXXB+7v09KbBbqdvxGqa0AqfK/atIrL2WXdAgXAJ43Wtwe/aIoacXezeGPMlhDOHDbSfHnaXsL2QzbT82GRwZuezdwcoWzx5pnOnGMUdHuiY7lhdyWzWiHnucLZQxYStMJbtcydHaQ6vtMbe0AcDbxG+QG14AL94xry4297xpy9Cpf1OoxZ740gHDfrK+gtsy0xabwJmfgtCeii79B6aj0SJeLbd7AAAAAElFTkSuQmCC);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+        }
+
+        .nav-container {
+            background-color: #fff;
+            padding: 24px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .main-container {
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
         .custom-form-parent {
             display: flex;
             flex-direction: column;
@@ -83,6 +152,21 @@
         .custom-btn:hover {
             background-color: #000;
             color: #fff;
+        }
+
+        .footer-container {
+            text-align: center;
+            max-width: 1400px;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-container span {
+            color: #000;
+            font-weight: 700;
         }
     </style>
 
@@ -977,45 +1061,43 @@
     </style>
 </head>
 
-<body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-        <div
-            class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-            <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                <header class="">
-                </header>
-
-                <main class="mt-6">
-                    <div class="flex flex-col justify-center items-center w-full">
-                        <div class="custom-header-div">
-                            <span class="custom-header">Add Product</span>
-                        </div>
-                        <form class="custom-form-parent" action="{{url('/AddProduct')}}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="input-parent">
-                                <label class="custom-label"for="productTitle">Product Title</label>
-                                <input class="custom-input" type="text" name="productTitle" id="productTitle">
-                            </div>
-                            <div class="input-parent">
-                                <label class="custom-label"for="productDesc">Product Description</label>
-                                <textarea class="custom-input" type="text" name="productDesc" id="productDesc"></textarea>
-                            </div>
-                            <div class="input-parent">
-                                <label class="custom-label"for="productImg">Product Image</label>
-                                <input class="custom-input" type="file" name="productImg" id="productImg"
-                                    accept="image/*">
-                            </div>
-                            <div class="btn-container">
-                                <button type="submit" class="custom-btn">Add Product</button>
-                            </div>
-                        </form>
+<body class="layout">
+    <div class="wrapper">
+        <nav class="nav-container">
+        </nav>
+        <main class="main-container">
+            <div class="flex flex-col justify-center items-center w-full">
+                <div class="custom-header-div">
+                    <span class="custom-header">Add Product</span>
+                </div>
+                <form class="custom-form-parent" action="{{ url('/AddProduct') }}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <div class="input-parent">
+                        <label class="custom-label"for="productTitle">Product Title</label>
+                        <input class="custom-input" type="text" name="productTitle" id="productTitle">
                     </div>
-                </main>
-
-                <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                </footer>
+                    <div class="input-parent">
+                        <label class="custom-label"for="productDesc">Product Description</label>
+                        <textarea class="custom-input" type="text" name="productDesc" id="productDesc"></textarea>
+                    </div>
+                    <div class="input-parent">
+                        <label class="custom-label"for="productImg">Product Image</label>
+                        <input class="custom-input" type="file" name="productImg" id="productImg" accept="image/*">
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="custom-btn">Add Product</button>
+                    </div>
+                </form>
             </div>
-        </div>
+        </main>
+        <footer class="footer-container">
+            <span>&#169;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>. All rights reserved Abdul-Quayum
+            </span>
+        </footer>
     </div>
 </body>
 

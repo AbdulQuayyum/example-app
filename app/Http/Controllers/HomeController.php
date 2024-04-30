@@ -23,8 +23,6 @@ class HomeController extends Controller
             $imagename = time() . '.' . $image->getClientOriginalExtension();
             $image->move('product', $imagename);
             $data->image = $imagename;
-        } else {
-            return redirect()->back()->with('error', 'Please upload an image.');
         }
         $data->save();
 
